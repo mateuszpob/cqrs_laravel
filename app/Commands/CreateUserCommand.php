@@ -9,9 +9,9 @@ class CreateUserCommand
         private string $password,
         private ?string $first_name = null,
         private ?string $last_name = null
-        ){
-
-        }
+    )
+    {
+    }
 
     public function getFirstName(): ?string
     {

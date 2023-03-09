@@ -17,6 +17,11 @@ class AvatarService
         Image::make($avatar)->fit(500)->save(Storage::disk('public')->path($path));
     }
 
+    public function deleteAvatar(User $user)
+    {
+        Storage::delete('public/' . self::getStoragePath($user->id));
+    }
+
     private static function getStoragePath($userId)
     {
         return Str::replace('[user_id]', $userId, config('settings.storage_avatar_path'));

@@ -9,7 +9,6 @@ class EditUserHandler
 {
     public function __construct(private AvatarService $avatarService)
     {
-
     }
 
     public function __invoke(EditUserCommand $command)

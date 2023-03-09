@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
@@ -14,13 +14,13 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::post('/register', [UserController::class, 'register']);
-Route::post('/login', [UserController::class, 'login']);
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
 
 Route::middleware(['auth:api'])->group(function () {
     Route::post('/update-profile', [UserController::class, 'updateProfile']);
     Route::get('/users', [UserController::class, 'users']);
     Route::delete('/user/{id}', [UserController::class, 'delete']);
     Route::post('/user/{id}', [UserController::class, 'update']);
-    Route::post('/logout', [UserController::class, 'logout']);
+    Route::post('/logout', [AuthController::class, 'logout']);
 });
