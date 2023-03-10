@@ -8,7 +8,7 @@ use App\Commands\DeleteUserCommand;
 use App\Commands\EditUserCommand;
 use App\Http\Requests\RegisterUserRequest;
 use App\Http\Requests\EditUserRequest;
-use App\Http\Requests\LoginRequest;
+use App\Http\Requests\EditProfileRequest;
 use App\Models\User;
 use App\Queries\UserByIdQuery;
 use App\Queries\UserListQuery;
@@ -40,7 +40,7 @@ class UserController extends Controller
     #[OA\Response(response: 401, description: 'Unauthenticated', content: new OA\JsonContent(properties: [
         new OA\Property(property: "message", type: "string", example: "Unauthenticated"),
     ]))]
-    public function updateProfile(EditUserRequest $request)
+    public function updateProfile(EditProfileRequest $request)
     {
         return $this->updateUser($request, auth()->user()->id);
     }

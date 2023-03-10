@@ -2,10 +2,9 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Log;
-class EditUserRequest extends SimpleRequest
+
+class EditProfileRequest extends SimpleRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -20,12 +19,12 @@ class EditUserRequest extends SimpleRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\Rule|array|string>
      */
-    public function rules(Request $request): array
+    public function rules(): array
     {
         return [
             'first_name' => 'string',
             'last_name' => 'string',
-            'email' => 'required|email|unique:users,email,' . $request->id,
+            'email' => 'required|email|unique:users,email,' . Auth::user()->id,
             'password' => 'string|min:6|max:50',
             'avatar' => 'file|mimes:jpg|max:10240'
         ];
