@@ -124,20 +124,17 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "Wrong credentials response",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "properties": {
-                                            "token": {
-                                                "type": "string",
-                                                "example": "16|vfXI2soVAlaYJGxyM8dFJ5Olp0ojBgL6GRiDs9yv"
-                                            }
-                                        },
-                                        "type": "object"
-                                    }
+                                    "properties": {
+                                        "token": {
+                                            "type": "string",
+                                            "example": "16|vfXI2soVAlaYJGxyM8dFJ5Olp0ojBgL6GRiDs9yv"
+                                        }
+                                    },
+                                    "type": "object"
                                 }
                             }
                         }
@@ -263,7 +260,12 @@
                             }
                         }
                     }
-                }
+                },
+                "security": [
+                    {
+                        "token": []
+                    }
+                ]
             }
         },
         "/api/user/{id}": {
@@ -498,6 +500,13 @@
                     }
                 },
                 "type": "object"
+            }
+        },
+        "securitySchemes": {
+            "token": {
+                "type": "apiKey",
+                "name": "Authorization",
+                "in": "header"
             }
         }
     }

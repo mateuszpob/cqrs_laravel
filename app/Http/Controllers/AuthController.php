@@ -51,9 +51,9 @@ class AuthController extends Controller
         new OA\Property(property: "email", type: "string", example: "user1@mail.com"),
         new OA\Property(property: "password", type: "string", example: "PassWord12345")
     ]))]
-    #[OA\Response(response: 200, description: 'Success', content: new OA\JsonContent(type: 'array', items: new OA\Items(properties: [
+    #[OA\Response(response: 200, description: 'Wrong credentials response', content: new OA\JsonContent(properties: [
         new OA\Property(property: "token", type: "string", example: "16|vfXI2soVAlaYJGxyM8dFJ5Olp0ojBgL6GRiDs9yv"),
-    ])))]
+    ]))]
     #[OA\Response(response: 422, description: 'Wrong credentials response', content: new OA\JsonContent(properties: [
         new OA\Property(property: "message", type: "string", example: "Sorry, wrong email address or password"),
     ]))]
