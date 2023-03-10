@@ -38,4 +38,4 @@ Każde zapytanie do API (z wyjątkiem /api/login i /api/register) musi mieć dod
 
 Każde zapytanie do API powinno być wysyłane z nagłówkiem "Accept: application/json"
 
-Aplikacja uruchomi się także po wpisaniu komendy "docker compose up" zamiast "sail up"
+Aplikacja uruchomi się także po wpisaniu komendy "docker compose up" zamiast "sail up", lecz późniejsze uruchomienie testów może się nie udać.
