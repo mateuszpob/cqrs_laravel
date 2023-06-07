@@ -37,5 +37,3 @@ Dokumentacja pod adresem:
 Każde zapytanie do API (z wyjątkiem /api/login i /api/register) musi mieć dodany nagłówek "Authorization" o wartośći "Bearer xxxxxxxxxxxxxxxxxxxx" gdzie "xxxxxxxxxxxxxxxxxxxx" jest tokenem uzyskanym podczas logowania.
 
 Każde zapytanie do API powinno być wysyłane z nagłówkiem "Accept: application/json"
-
-Aplikacja uruchomi się także po wpisaniu komendy "docker compose up" zamiast "sail up", lecz późniejsze uruchomienie testów może się nie udać.
